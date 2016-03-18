@@ -1,6 +1,7 @@
-/*
+/**
  * jQuery Responsive Containers
- * https://github.com/stilliard/jquery-responsive-containers
+ * https://github.com/rosenbm/jquery-responsive-containers
+ * @author David Napierata
  *
  */
 (function ($) {
@@ -18,7 +19,7 @@
     // Begin the plugin
     $.fn.responsiveContainer = function (options) {
 
-        // we need a couple things to do anyhting of use
+        // we need a couple things to do anything of use
         if (typeof options.feature === 'undefined') {
             throw new Error('Responsive container error: No "feature" supplied, such as min-width.');
         }
@@ -54,7 +55,7 @@
                             }
                             break;
                         case 'max-width':
-                            if (settings.value.replace('px', '') > width) {
+                            if (!self.is(':hidden') && settings.value.replace('px', '') > width) {
                                 matches = true;
                             }
                             break;
